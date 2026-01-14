@@ -167,3 +167,27 @@ form .form-control:focus{
   transform:translateY(-2px);
   box-shadow:0 12px 30px var(--shadow-hover);
 }
+:focus{outline:none}
+.btn:focus,.social-link:focus,.nav-link:focus{
+  outline:3px solid rgba(79,70,229,0.14);
+  outline-offset:3px;
+  border-radius:8px;
+}
+footer{color:var(--muted);font-size:0.9rem;letter-spacing:0.3px}
+@media (max-width:991px){
+  .social-vertical{display:none;}
+  .hero-section{padding-top:100px;}
+  .profile-img{width:260px;height:260px;}
+}
+@media (max-width:575px){
+  .hero-section{padding-top:80px;padding-bottom:50px;}
+  .profile-img{width:180px;height:180px;}
+  .hero-left .hero-content{text-align:center;}
+  .hero-right{margin-top:1.5rem;}
+  .mobile-social .social-link{width:44px;height:44px;}
+}
+.reveal{opacity:1;transform:none;transition:opacity .8s ease,transform .8s ease}
+[data-revealed]{opacity:0;transform:translateY(18px)}
+
+.typed{color:var(--text);font-weight:600}
+.name{color:var(--muted);font-weight:400}
