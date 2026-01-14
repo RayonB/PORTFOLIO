@@ -1,0 +1,24 @@
+:root{
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#6b7280;
+  --primary:#4f46e5;
+  --accent:#06b6d4;
+  --shadow-light: rgba(12,18,36,0.06);
+  --shadow-hover: rgba(79,70,229,0.08);
+  --hero-gradient: linear-gradient(135deg, rgba(79,70,229,0.15), rgba(6,182,212,0.15));
+}
+
+/* Global */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+  overflow-x:hidden;
+}
