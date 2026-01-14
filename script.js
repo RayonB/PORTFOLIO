@@ -39,3 +39,45 @@ const observer = new IntersectionObserver(entries => {
   });
 }, obsOptions);
 sections.forEach(s => observer.observe(s));
+const revealables = document.querySelectorAll('[data-reveal]');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('reveal');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealables.forEach(r => revealObserver.observe(r));
+(() => {
+  const form = document.getElementById('contactForm');
+  if(!form) return;
+  form.addEventListener('submit', function (event) {
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+      form.classList.add('was-validated');
+      return;
+    }
+event.preventDefault();
+    form.classList.add('was-validated');
+    const submitBtn = this.querySelector('button[type=submit]');
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Sending...';
+    // Demo: show inline success message
+    setTimeout(() => {
+      this.reset();
+      this.classList.remove('was-validated');
+      submitBtn.disabled = false;
+      submitBtn.innerText = 'Send Message';
+      const msg = document.getElementById('formMessage');
+      if (msg) {
+        msg.classList.remove('d-none');
+        msg.focus && msg.focus();
+        setTimeout(() => msg.classList.add('d-none'), 3000);
+      } else {
+        alert('Message sent (demo).');
+      }
+    }, 900);
+  }, false);
+})();
