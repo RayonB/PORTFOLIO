@@ -138,3 +138,22 @@ body{
   transform:translateY(-6px) rotate(-0.6deg) scale(1.02);
   box-shadow:0 50px 100px rgba(16,24,40,0.12);
 }
+.project-card img{
+  height:200px;
+  object-fit:cover;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
+}
+.project-card{
+  border-radius:12px;
+  overflow:hidden;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.project-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 35px 70px var(--shadow-light);
+}
+form .form-control:focus{
+  box-shadow:0 10px 30px var(--shadow-hover);
+  border-color:var(--primary);
+}
