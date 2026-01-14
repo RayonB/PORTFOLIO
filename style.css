@@ -157,3 +157,13 @@ form .form-control:focus{
   box-shadow:0 10px 30px var(--shadow-hover);
   border-color:var(--primary);
 }
+.btn-primary{
+  background:var(--primary);
+  border-color:var(--primary);
+  transition:all .25s ease;
+}
+.btn-primary:hover{
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px var(--shadow-hover);
+}
